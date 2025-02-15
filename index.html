@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-container">
+        <video id="video-background" hidden autoplay loop></video>
+        <img id="image-background" hidden>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container" id="form">
+        <form id="countdown-form">
+            <div>
+                <label for="countdown-title-input">Enter Countdown Title</label>
+                <input type="text" id="countdown-title-input" placeholder="What are you counting down to?">
+            </div>
+            <div>
+                <label for="countdown-date">Enter Countdown Date</label>
+                <input type="datetime-local" id="countdown-date" required>
+            </div>
+            <div>
+                <label for="countdown-background">Upload Background (PNG or MP4)</label>
+                <input type="file" id="countdown-background" accept="image/png, video/mp4">
+            </div>
+            <div>
+                <label for="font-color">Choose Font Color</label>
+                <input type="color" id="font-color" value="ffffff">
+            </div>
+            <div>
+                <label for="font-size">Choose Font Size (px)</label>
+                <input type="number" id="font-size" min="10" max="100" value="24">
+            </div>
+            <button type="submit" class="button" id="start-button">Start Countdown</button>
+        </form>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-container" id="countdown" hidden>
+        <h1 id="countdown-title">Countdown Timer</h1>
+        <div class="timebox">
+            <div class="time">
+                <h2 id="days">00</h2>
+                <p>Days</p>
+            </div>
+            <div class="time">
+                <h2 id="hours">00</h2>
+                <p>Hours</p>
+            </div>
+            <div class="time">
+                <h2 id="minutes">00</h2>
+                <p>Minutes</p>
+            </div>
+            <div class="time">
+                <h2 id="seconds">00</h2>
+                <p>Seconds</p>
+            </div>
+        </div>
+        <button type="button" class="button" id="reset-button">Reset</button>
+    </div>
+
+    <!-- Countdown Complete -->
+    <div class="complete-container" id="countdown-complete" hidden>
+        <h1 class="complete-title">Countdown Complete!</h1>
+        <button class="button" id="new-countdown-button">New Countdown</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
